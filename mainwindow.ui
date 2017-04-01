@@ -22,14 +22,14 @@
       </property>
       <widget class="QWidget" name="page">
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
+        <item row="0" column="0" colspan="2">
          <widget class="QLabel" name="menulabel">
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Меню&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1" rowspan="6">
+        <item row="0" column="2" rowspan="5">
          <widget class="QStackedWidget" name="stackedWidget">
           <property name="autoFillBackground">
            <bool>false</bool>
@@ -44,71 +44,105 @@
           <widget class="QWidget" name="page_4"/>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="abclabel">
-          <property name="text">
-           <string>Розділ 1.Абетка</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item row="1" column="0" colspan="2">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QPushButton" name="abcButton">
+           <widget class="QLabel" name="abclabel">
             <property name="text">
-             <string>Абетка</string>
+             <string>Розділ 1.Абетка</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="studyButton">
-            <property name="text">
-             <string>Вивчення</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="testabcButton">
-            <property name="text">
-             <string>Тест</string>
-            </property>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QPushButton" name="abcButton">
+              <property name="text">
+               <string>Абетка</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="studyButton">
+              <property name="text">
+               <string>Вивчення</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="testabcButton">
+              <property name="text">
+               <string>Тест</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="themelabel">
-          <property name="text">
-           <string>Розділ 2. Теми</string>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>17</width>
+            <height>33</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="themelabel">
+            <property name="text">
+             <string>Розділ 2. Теми</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Овочі</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QPushButton" name="test1vegetableButton">
+              <property name="text">
+               <string>Тест1. Впиши слово</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="test2vegetableButton">
+              <property name="text">
+               <string>Тест2. Вибери слово</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </item>
         <item row="4" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Овочі</string>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>64</height>
+           </size>
+          </property>
+         </spacer>
         </item>
-        <item row="5" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QPushButton" name="test1vegetableButton">
-            <property name="text">
-             <string>Тест1. Впиши слово</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="test2vegetableButton">
-            <property name="text">
-             <string>Тест2. Вибери слово</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="6" column="0">
+        <item row="5" column="0" colspan="2">
          <widget class="QPushButton" name="outputButton">
           <property name="text">
            <string>Вихід</string>
