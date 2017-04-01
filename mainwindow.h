@@ -16,6 +16,8 @@ public:
     ~MainWindow();
 
 private:
+    void saveDataToDB();
+
     Ui::MainWindow *ui;
 };
 
