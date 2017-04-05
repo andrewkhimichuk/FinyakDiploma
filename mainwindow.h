@@ -3,6 +3,14 @@
 
 #include <QMainWindow>
 
+struct User {
+    QString name;
+    QString surname;
+    bool sex;
+    int age;
+    bool isDefect;
+};
+
 namespace Ui {
 class MainWindow;
 }
@@ -15,10 +23,20 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_inputButton_clicked();
+    void createUserData();
+    void on_abcButton_clicked();
+
+    void on_studyButton_clicked();
+
+    void on_testabcButton_clicked();
+
 private:
     void saveDataToDB();
 
     Ui::MainWindow *ui;
+    User *crrntUser;
 };
 
 #endif // MAINWINDOW_H
