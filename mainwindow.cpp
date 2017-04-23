@@ -43,8 +43,16 @@ void MainWindow::createUserData()
 
 void MainWindow::on_abcButton_clicked()
 {
+    current_abc = 0;
+    ui->stackedWidget->setCurrentIndex(0);
     ui->studyButton->setChecked(false);
     ui->testabcButton->setChecked(false);
+    QString path = ":/quest/resources/abc.jpg";
+    QPixmap pic(path);
+    ui->letter_abc->setPixmap(pic);
+    int w =  ui->letter_abc->width();
+    int h =  ui->letter_abc->height();
+    ui->letter_abc->setPixmap(pic.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 void MainWindow::on_studyButton_clicked()
@@ -57,4 +65,24 @@ void MainWindow::on_testabcButton_clicked()
 {
     ui->studyButton->setChecked(false);
     ui->abcButton->setChecked(false);
+}
+
+void MainWindow::showLetter(int num)
+{
+    current_abc = num;
+    QString path = ":/quest/resources/"+QString::number(num%33 + 1)+".jpg";
+    QPixmap pic(path);
+    if(pic.isNull())
+       pic.load(":/quest/resources/default.jpg" );
+    ui->letter_abc->setPixmap(pic);
+    int w =  ui->letter_abc->width();
+    int h =  ui->letter_abc->height();
+
+    ui->letter_abc->setPixmap(pic.scaled(w,h,Qt::KeepAspectRatio));
+}
+
+void MainWindow::on_nextButton_clicked()
+{
+    showLetter(current_abc);
+    current_abc++;
 }

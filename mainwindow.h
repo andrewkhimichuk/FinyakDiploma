@@ -27,14 +27,16 @@ private slots:
     void on_inputButton_clicked();
     void createUserData();
     void on_abcButton_clicked();
-
     void on_studyButton_clicked();
-
     void on_testabcButton_clicked();
 
+    void on_nextButton_clicked();
+
 private:
+    void showLetter(int);
     void saveDataToDB();
 
+    int current_abc;
     Ui::MainWindow *ui;
     User *crrntUser;
 };
