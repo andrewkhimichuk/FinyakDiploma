@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <QDate>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,13 +22,30 @@ MainWindow::~MainWindow()
 
 void MainWindow::saveDataToDB()
 {
+    QFile file("db.csv");
+        if (!file.open(QFile::WriteOnly|QIODevice::Append)) {
+            qDebug() << file.errorString();
+        }
+        else
+        {
+            QString sex = crrntUser->sex?"1":"0";
+            QString defect = crrntUser->isDefect?"1":"0";
 
+            QTextStream stream(&file);
+            stream << crrntUser->name << ";" << crrntUser->surname << ";" <<
+                      sex << ";" <<QString::number(crrntUser->age) << ";" <<
+                      defect << ";" << QDate::currentDate().toString() << "\n";
+
+            qDebug() << stream.readAll();
+            file.close();
+         }
 }
 
 void MainWindow::on_inputButton_clicked()
 {
     crrntUser = new User();
     createUserData();
+    saveDataToDB();
     qDebug() << ui->mainWidget->currentIndex();
     ui->mainWidget->setCurrentIndex(0);
 }

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QAxObject>
+#include <QFile>
 
 struct User {
     QString name;
