@@ -49,6 +49,7 @@ void MainWindow::on_abcButton_clicked()
     ui->testabcButton->setChecked(false);
     QString path = ":/quest/resources/abc.jpg";
     QPixmap pic(path);
+    ui->letter_abc->setAlignment(Qt::AlignCenter);
     ui->letter_abc->setPixmap(pic);
     int w =  ui->letter_abc->width();
     int h =  ui->letter_abc->height();
@@ -74,6 +75,7 @@ void MainWindow::showLetter(int num)
     QPixmap pic(path);
     if(pic.isNull())
        pic.load(":/quest/resources/default.jpg" );
+    ui->letter_abc->setAlignment(Qt::AlignCenter);
     ui->letter_abc->setPixmap(pic);
     int w =  ui->letter_abc->width();
     int h =  ui->letter_abc->height();
