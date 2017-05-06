@@ -32,7 +32,11 @@ private slots:
     void on_studyButton_clicked();
     void on_testabcButton_clicked();
 
-    void on_nextButton_clicked();
+    void on_nextabcButton_clicked();
+
+    void on_outputButton_clicked();
+
+    void on_exitabcButton_clicked();
 
 private:
     void showLetter(int);
