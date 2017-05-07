@@ -36,4 +36,16 @@
         <file>resources/abc.jpg</file>
         <file>resources/23.jpg</file>
     </qresource>
+    <qresource prefix="/qss">
+        <file>style.css</file>
+    </qresource>
+    <qresource prefix="/style">
+        <file>gui/combobox-down-arrow.png</file>
+        <file>gui/radiobutton-indicator.png</file>
+        <file>gui/radiobutton-indicator-bg.png</file>
+        <file>gui/radiobutton-indicator-bg-checked.png</file>
+        <file>gui/radiobutton-indicator-bg-disabled.png</file>
+        <file>gui/radiobutton-indicator-checked.png</file>
+        <file>gui/radiobutton-indicator-disabled.png</file>
+    </qresource>
 </RCC>

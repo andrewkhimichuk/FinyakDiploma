@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QDate>
+#include <Qfile>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,6 +14,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->abcButton->setCheckable(true);
     ui->testabcButton->setCheckable(true);
     ui->studyButton->setCheckable(true);
+    ui->nextabcButton->setObjectName("nextabcButton");
+    ui->exitabcButton->setObjectName("exitabcButton");
+    QFile styleF;
+
+    styleF.setFileName(":/qss/style.css");
+    styleF.open(QFile::ReadOnly);
+    QString qssStr = styleF.readAll();
+
+    qApp->setStyleSheet(qssStr);
 }
 
 MainWindow::~MainWindow()
@@ -101,8 +111,18 @@ void MainWindow::showLetter(int num)
     ui->letter_abc->setPixmap(pic.scaled(w,h,Qt::KeepAspectRatio));
 }
 
-void MainWindow::on_nextButton_clicked()
+void MainWindow::on_nextabcButton_clicked()
 {
     showLetter(current_abc);
     current_abc++;
+}
+
+void MainWindow::on_outputButton_clicked()
+{
+    close();
+}
+
+void MainWindow::on_exitabcButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }
