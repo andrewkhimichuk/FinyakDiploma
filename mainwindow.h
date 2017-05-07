@@ -38,8 +38,13 @@ private slots:
 
     void on_exitabcButton_clicked();
 
+    void on_an_studyButton_clicked();
+
+    void on_nextStdAnmlBttn_clicked();
+
 private:
     void showLetter(int);
+    void showAnimal(int);
     void saveDataToDB();
 
     int current_abc;

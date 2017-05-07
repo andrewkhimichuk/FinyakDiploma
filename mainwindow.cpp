@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QDate>
 #include <Qfile>
+#include <QMovie>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -111,6 +112,30 @@ void MainWindow::showLetter(int num)
     ui->letter_abc->setPixmap(pic.scaled(w,h,Qt::KeepAspectRatio));
 }
 
+void MainWindow::showAnimal(int num)
+{
+     current_abc = num;
+
+     QString path = ":/quest/resources/animals/an_"+QString::number(num%4 + 1)+".jpg";
+     QPixmap pic(path);
+     if(pic.isNull())
+        pic.load(":/quest/resources/default.jpg" );
+     ui->anmlPic->setAlignment(Qt::AlignCenter);
+     ui->anmlPic->setPixmap(pic);
+
+     QMovie *mv = new QMovie(":/quest/resources/animals/an_"+QString::number(num%4 + 1)+".gif");
+     mv->start();
+     ui->anmlGif->setAttribute(Qt::WA_NoSystemBackground);
+     ui->anmlGif->setMovie(mv);
+
+     QString path2 = ":/quest/resources/animals/an_abc_"+QString::number(num%4 + 1)+".jpg";
+     QPixmap pic2(path2);
+     if(pic2.isNull())
+        pic2.load(":/quest/resources/default.jpg" );
+     ui->anmlWrd->setAlignment(Qt::AlignCenter);
+     ui->anmlWrd->setPixmap(pic2);
+}
+
 void MainWindow::on_nextabcButton_clicked()
 {
     showLetter(current_abc);
@@ -125,4 +150,17 @@ void MainWindow::on_outputButton_clicked()
 void MainWindow::on_exitabcButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_an_studyButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    current_abc = 0;
+    showAnimal(current_abc);
+}
+
+void MainWindow::on_nextStdAnmlBttn_clicked()
+{
+    showAnimal(current_abc);
+    current_abc++;
 }
