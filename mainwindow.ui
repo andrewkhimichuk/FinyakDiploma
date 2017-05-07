@@ -21,7 +21,7 @@
        <number>1</number>
       </property>
       <widget class="QWidget" name="page">
-       <layout class="QGridLayout" name="gridLayout_5">
+       <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
          <widget class="QLabel" name="menulabel">
           <property name="text">
@@ -168,7 +168,7 @@
          </widget>
         </item>
         <item row="3" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
@@ -177,42 +177,52 @@
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <widget class="QPushButton" name="test1vegetableButton">
-              <property name="text">
-               <string>Тест1. Впиши слово</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="test2vegetableButton">
-              <property name="text">
-               <string>Тест2. Вибери слово</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QPushButton" name="veg_studyButton">
+            <property name="text">
+             <string>Вивчити</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="test1vegetableButton">
+            <property name="text">
+             <string>Тест1. Впиши слово</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="test2vegetableButton">
+            <property name="text">
+             <string>Тест2. Вибери слово</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
         <item row="4" column="0">
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
            <widget class="QLabel" name="label_2">
             <property name="text">
              <string>Фрукти</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item>
+           <widget class="QPushButton" name="fr_studyButton">
+            <property name="text">
+             <string>Вивчити</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="test1fruitButton">
             <property name="text">
              <string>Тест 1. Впиши слово</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item>
            <widget class="QPushButton" name="test2fruitButton">
             <property name="text">
              <string>Тест2. Вибери слово</string>
@@ -222,25 +232,32 @@
          </layout>
         </item>
         <item row="5" column="0">
-         <layout class="QGridLayout" name="gridLayout_4">
-          <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Тварини</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="an_studyButton">
+            <property name="text">
+             <string>Вивчити</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="test1animalsButton">
             <property name="text">
              <string>Тест1. Впиши слово</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item>
            <widget class="QPushButton" name="test2animalsButton">
             <property name="text">
              <string>Тест2. Вибери слово</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Тварини</string>
             </property>
            </widget>
           </item>
@@ -277,16 +294,12 @@
        <zorder>menulabel</zorder>
        <zorder>stackedWidget</zorder>
        <zorder>outputButton</zorder>
-       <zorder>label_2</zorder>
-       <zorder>test1fruitButton</zorder>
-       <zorder>test2fruitButton</zorder>
        <zorder>themelabel</zorder>
-       <zorder>label_3</zorder>
-       <zorder>test1animalsButton</zorder>
-       <zorder>test2animalsButton</zorder>
-       <zorder>label_3</zorder>
        <zorder>usr_Bttn</zorder>
        <zorder>verticalSpacer</zorder>
+       <zorder>veg_studyButton</zorder>
+       <zorder>fr_studyButton</zorder>
+       <zorder>an_studyButton</zorder>
       </widget>
       <widget class="QWidget" name="page_2">
        <widget class="QPushButton" name="inputButton">
@@ -458,8 +471,6 @@ p, li { white-space: pre-wrap; }
      </widget>
     </item>
    </layout>
-   <zorder>outputButton</zorder>
-   <zorder>mainWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -485,7 +496,7 @@ p, li { white-space: pre-wrap; }
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>
