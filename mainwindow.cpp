@@ -123,7 +123,9 @@ void MainWindow::showAnimal(int num)
      ui->anmlPic->setAlignment(Qt::AlignCenter);
      ui->anmlPic->setPixmap(pic);
 
-     QMovie *mv = new QMovie(":/quest/resources/animals/an_"+QString::number(num%4 + 1)+".gif");
+     if(mv) {delete mv; mv = NULL; ui->anmlGif->clear();}
+
+     mv = new QMovie(":/quest/resources/animals/an_"+QString::number(num%4 + 1)+".gif");
      mv->start();
      ui->anmlGif->setAttribute(Qt::WA_NoSystemBackground);
      ui->anmlGif->setMovie(mv);
@@ -134,6 +136,7 @@ void MainWindow::showAnimal(int num)
         pic2.load(":/quest/resources/default.jpg" );
      ui->anmlWrd->setAlignment(Qt::AlignCenter);
      ui->anmlWrd->setPixmap(pic2);
+
 }
 
 void MainWindow::on_nextabcButton_clicked()
@@ -155,6 +158,7 @@ void MainWindow::on_exitabcButton_clicked()
 void MainWindow::on_an_studyButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+    mv = NULL;
     current_abc = 0;
     showAnimal(current_abc);
 }

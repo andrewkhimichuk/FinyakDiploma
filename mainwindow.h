@@ -48,6 +48,7 @@ private:
     void saveDataToDB();
 
     int current_abc;
+    QMovie *mv;
     Ui::MainWindow *ui;
     User *crrntUser;
 };
