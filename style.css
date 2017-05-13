@@ -66,6 +66,46 @@ QComboBox QAbstractItemView {
         min-height: 22px;
         min-width: 65px;
 }
+#nextStdAnmlBttn {
+color: white;
+background-color: rgb(26, 188, 156);
+border-radius: 5px;
+border: 2px solid #12A986;
+min-height: 22px;
+min-width: 65px;
+}
+#yes_abcButton{
+color: white;
+background-color: rgb(26, 188, 156);
+border-radius: 5px;
+border: 2px solid #12A986;
+min-height: 22px;
+min-width: 65px;
+}
+#exitanButton  {
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+        border: 2px solid red;
+        min-height: 22px;
+        min-width: 65px;
+}
+#no_abcButton{
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: 2px solid red;
+    min-height: 22px;
+    min-width: 65px;
+}
+#exitstudyBttn  {
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+        border: 2px solid red;
+        min-height: 22px;
+        min-width: 65px;
+}
 QPushButton:hover#nextabcButton {
         background-color: rgb(72, 201, 176);
         border-radius: 5px;
@@ -77,6 +117,26 @@ QPushButton:pressed#nextabcButton{
         border-radius: 5px;
 }
 
+QPushButton:hover#nextStdAnmlBttn {
+        background-color: rgb(72, 201, 176);
+        border-radius: 5px;
+}
+
+
+QPushButton:pressed#nextStdAnmlBttn{
+        background-color: rgb(22, 160, 133);
+        border-radius: 5px;
+}
+QPushButton:hover#yes_abcButton {
+        background-color: rgb(72, 201, 176);
+        border-radius: 5px;
+}
+
+
+QPushButton:pressed#yes_abcButton{
+        background-color: rgb(22, 160, 133);
+        border-radius: 5px;
+}
 QPushButton:hover {
         background-color: rgb(72, 201, 176);
         border-radius: 5px;

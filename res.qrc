@@ -35,30 +35,60 @@
         <file>resources/33.jpg</file>
         <file>resources/abc.jpg</file>
         <file>resources/23.jpg</file>
-        <file>resources/animals/an_1.gif</file>
         <file>resources/animals/an_1.jpg</file>
-        <file>resources/animals/an_2.gif</file>
         <file>resources/animals/an_2.jpg</file>
-        <file>resources/animals/an_3.gif</file>
         <file>resources/animals/an_3.jpg</file>
-        <file>resources/animals/an_4.gif</file>
         <file>resources/animals/an_4.jpg</file>
-        <file>resources/animals/an_5.gif</file>
         <file>resources/animals/an_5.jpg</file>
-        <file>resources/animals/an_6.gif</file>
         <file>resources/animals/an_6.jpg</file>
-        <file>resources/animals/an_7.gif</file>
         <file>resources/animals/an_7.jpg</file>
-        <file>resources/animals/an_8.gif</file>
         <file>resources/animals/an_8.jpg</file>
-        <file>resources/animals/an_9.gif</file>
         <file>resources/animals/an_9.jpg</file>
-        <file>resources/animals/an_10.gif</file>
         <file>resources/animals/an_10.jpg</file>
         <file>resources/animals/an_abc_1.jpg</file>
         <file>resources/animals/an_abc_2.jpg</file>
         <file>resources/animals/an_abc_3.jpg</file>
         <file>resources/animals/an_abc_4.jpg</file>
+        <file>resources/fruit/fr_1.jpg</file>
+        <file>resources/fruit/fr_2.jpg</file>
+        <file>resources/fruit/fr_3.jpg</file>
+        <file>resources/fruit/fr_4.jpg</file>
+        <file>resources/fruit/fr_5.jpg</file>
+        <file>resources/fruit/fr_6.jpg</file>
+        <file>resources/fruit/fr_7.jpg</file>
+        <file>resources/fruit/fr_8.jpg</file>
+        <file>resources/fruit/fr_9.jpg</file>
+        <file>resources/fruit/fr_10.jpg</file>
+        <file>resources/fruit/fr_abc_1.jpg</file>
+        <file>resources/fruit/fr_abc_2.jpg</file>
+        <file>resources/fruit/fr_abc_3.jpg</file>
+        <file>resources/fruit/fr_abc_4.jpg</file>
+        <file>resources/fruit/fr_abc_5.jpg</file>
+        <file>resources/fruit/fr_abc_6.jpg</file>
+        <file>resources/fruit/fr_abc_7.jpg</file>
+        <file>resources/fruit/fr_abc_8.jpg</file>
+        <file>resources/fruit/fr_abc_9.jpg</file>
+        <file>resources/fruit/fr_abc_10.jpg</file>
+        <file>resources/vegetable/veg_1.jpg</file>
+        <file>resources/vegetable/veg_2.jpg</file>
+        <file>resources/vegetable/veg_3.jpg</file>
+        <file>resources/vegetable/veg_4.jpg</file>
+        <file>resources/vegetable/veg_5.jpg</file>
+        <file>resources/vegetable/veg_6.jpg</file>
+        <file>resources/vegetable/veg_7.jpg</file>
+        <file>resources/vegetable/veg_8.jpg</file>
+        <file>resources/vegetable/veg_9.jpg</file>
+        <file>resources/vegetable/veg_10.jpg</file>
+        <file>resources/vegetable/veg_abc_1.jpg</file>
+        <file>resources/vegetable/veg_abc_2.jpg</file>
+        <file>resources/vegetable/veg_abc_3.jpg</file>
+        <file>resources/vegetable/veg_abc_4.jpg</file>
+        <file>resources/vegetable/veg_abc_5.jpg</file>
+        <file>resources/vegetable/veg_abc_6.jpg</file>
+        <file>resources/vegetable/veg_abc_7.jpg</file>
+        <file>resources/vegetable/veg_abc_8.jpg</file>
+        <file>resources/vegetable/veg_abc_9.jpg</file>
+        <file>resources/vegetable/veg_abc_10.jpg</file>
     </qresource>
     <qresource prefix="/qss">
         <file>style.css</file>

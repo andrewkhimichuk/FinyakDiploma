@@ -42,12 +42,41 @@ private slots:
 
     void on_nextStdAnmlBttn_clicked();
 
+    void on_exitanButton_clicked();
+
+    void on_veg_studyButton_clicked();
+
+    void on_fr_studyButton_clicked();
+
+    void on_test1vegetableButton_clicked();
+
+    void on_test2vegetableButton_clicked();
+
+    void on_exitstudyBttn_clicked();
+
+    void on_exit_test_abcButton_clicked();
+
+    void on_test1fruitButton_clicked();
+
+    void on_test2fruitButton_clicked();
+
+    void on_test1anButton_clicked();
+
+    void on_test2anButton_clicked();
+
+    void on_test1vegButton_clicked();
+
+    void on_test2vegButton_clicked();
+
 private:
     void showLetter(int);
     void showAnimal(int);
     void saveDataToDB();
+    void showFruit(int);
+    void showVeg(int);
 
     int current_abc;
+    int current_type;
     QMovie *mv;
     Ui::MainWindow *ui;
     User *crrntUser;

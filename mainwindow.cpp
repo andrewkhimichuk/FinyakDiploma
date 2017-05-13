@@ -11,12 +11,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     crrntUser = NULL;
-
+    current_type = 0;
     ui->abcButton->setCheckable(true);
     ui->testabcButton->setCheckable(true);
     ui->studyButton->setCheckable(true);
     ui->nextabcButton->setObjectName("nextabcButton");
     ui->exitabcButton->setObjectName("exitabcButton");
+    ui->nextStdAnmlBttn->setObjectName("nextStdAnmlBttn");
+    ui->exitanButton->setObjectName("exitanButton");
+    ui->no_abcButton->setObjectName("no_abcButton");
+    ui->exitstudyBttn->setObjectName("exitstudyBttn");
+    ui->yes_abcButton->setObjectName("yes_abcButton");
     QFile styleF;
 
     styleF.setFileName(":/qss/style.css");
@@ -89,12 +94,14 @@ void MainWindow::on_studyButton_clicked()
 {
     ui->testabcButton->setChecked(false);
     ui->abcButton->setChecked(false);
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_testabcButton_clicked()
 {
     ui->studyButton->setChecked(false);
     ui->abcButton->setChecked(false);
+    ui->stackedWidget->setCurrentIndex(4);
 }
 
 void MainWindow::showLetter(int num)
@@ -121,11 +128,14 @@ void MainWindow::showAnimal(int num)
      if(pic.isNull())
         pic.load(":/quest/resources/default.jpg" );
      ui->anmlPic->setAlignment(Qt::AlignCenter);
-     ui->anmlPic->setPixmap(pic);
+
+     ui->anmlPic->setPixmap(pic.scaled(250,250,Qt::KeepAspectRatio));
+
+     //ui->anmlPic->setPixmap(pic);
 
      if(mv) {delete mv; mv = NULL; ui->anmlGif->clear();}
 
-     mv = new QMovie(":/quest/resources/animals/an_"+QString::number(num%4 + 1)+".gif");
+     mv = new QMovie("resources/animals/an_"+QString::number(num%4 + 1)+".gif");
      mv->start();
      ui->anmlGif->setAttribute(Qt::WA_NoSystemBackground);
      ui->anmlGif->setMovie(mv);
@@ -138,7 +148,64 @@ void MainWindow::showAnimal(int num)
      ui->anmlWrd->setPixmap(pic2);
 
 }
+void MainWindow::showFruit(int num)
+{
+     current_abc = num;
 
+     QString path = ":/quest/resources/fruit/fr_"+QString::number(num%10 + 1)+".jpg";
+     QPixmap pic(path);
+     if(pic.isNull())
+        pic.load(":/quest/resources/default.jpg" );
+     ui->anmlPic->setAlignment(Qt::AlignCenter);
+
+     ui->anmlPic->setPixmap(pic.scaled(250,250,Qt::KeepAspectRatio));
+
+     //ui->anmlPic->setPixmap(pic);
+
+     if(mv) {delete mv; mv = NULL; ui->anmlGif->clear();}
+
+     mv = new QMovie("resources/fruit/fr_"+QString::number(num%10 + 1)+".gif");
+     mv->start();
+     ui->anmlGif->setAttribute(Qt::WA_NoSystemBackground);
+     ui->anmlGif->setMovie(mv);
+
+     QString path2 = ":/quest/resources/fruit/fr_abc_"+QString::number(num%10 + 1)+".jpg";
+     QPixmap pic2(path2);
+     if(pic2.isNull())
+        pic2.load(":/quest/resources/default.jpg" );
+     ui->anmlWrd->setAlignment(Qt::AlignCenter);
+     ui->anmlWrd->setPixmap(pic2);
+
+}
+void MainWindow::showVeg(int num)
+{
+     current_abc = num;
+
+     QString path = ":/quest/resources/vegetable/veg_"+QString::number(num%10 + 1)+".jpg";
+     QPixmap pic(path);
+     if(pic.isNull())
+        pic.load(":/quest/resources/default.jpg" );
+     ui->anmlPic->setAlignment(Qt::AlignCenter);
+
+     ui->anmlPic->setPixmap(pic.scaled(250,250,Qt::KeepAspectRatio));
+
+     //ui->anmlPic->setPixmap(pic);
+
+     if(mv) {delete mv; mv = NULL; ui->anmlGif->clear();}
+
+     mv = new QMovie("resources/vegetable/veg_"+QString::number(num%10 + 1)+".gif");
+     mv->start();
+     ui->anmlGif->setAttribute(Qt::WA_NoSystemBackground);
+     ui->anmlGif->setMovie(mv);
+
+     QString path2 = ":/quest/resources/vegetable/veg_abc_"+QString::number(num%10 + 1)+".jpg";
+     QPixmap pic2(path2);
+     if(pic2.isNull())
+        pic2.load(":/quest/resources/default.jpg" );
+     ui->anmlWrd->setAlignment(Qt::AlignCenter);
+     ui->anmlWrd->setPixmap(pic2);
+
+}
 void MainWindow::on_nextabcButton_clicked()
 {
     showLetter(current_abc);
@@ -160,11 +227,90 @@ void MainWindow::on_an_studyButton_clicked()
     ui->stackedWidget->setCurrentIndex(3);
     mv = NULL;
     current_abc = 0;
+    current_type = 1;
     showAnimal(current_abc);
 }
 
 void MainWindow::on_nextStdAnmlBttn_clicked()
 {
-    showAnimal(current_abc);
     current_abc++;
+    if (current_type == 1 )
+       showAnimal(current_abc);
+    if (current_type == 2 )
+       showFruit(current_abc);
+    if(current_type == 3 )
+      showVeg(current_abc);
+}
+
+void MainWindow::on_exitanButton_clicked()
+{
+   ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_veg_studyButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    mv = NULL;
+    current_abc = 0;
+    current_type = 3;
+    showVeg(current_abc);
+}
+
+void MainWindow::on_fr_studyButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    mv = NULL;
+    current_abc = 0;
+    current_type = 2;
+    showFruit(current_abc);
+}
+
+void MainWindow::on_test1vegetableButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_test2vegetableButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::on_exitstudyBttn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_exit_test_abcButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_test1fruitButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_test2fruitButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::on_test1anButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_test2anButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::on_test1vegButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_test2vegButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
 }
