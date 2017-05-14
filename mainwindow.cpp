@@ -95,6 +95,28 @@ void MainWindow::on_studyButton_clicked()
     ui->testabcButton->setChecked(false);
     ui->abcButton->setChecked(false);
     ui->stackedWidget->setCurrentIndex(1);
+    crrnt_std_score = 0;
+    showTwoPics();
+}
+
+void MainWindow::showTwoPics()
+{
+    crrnt_std_frst = (qrand() % 32)+1;
+    crrnt_std_sknd = (qrand() % 32)+1;
+
+    QString path = ":/quest/resources/abc/abc_"+QString::number(crrnt_std_frst)+".jpg";
+    QPixmap pic(path);
+    if(pic.isNull())
+       pic.load(":/quest/resources/default.jpg" );
+    ui->abcleft->setAlignment(Qt::AlignCenter);
+    ui->abcleft->setPixmap(pic);
+
+    QString path2 = ":/quest/resources/abc/al_"+QString::number(crrnt_std_sknd)+".jpg";
+    QPixmap pic2(path2);
+    if(pic2.isNull())
+       pic2.load(":/quest/resources/default.jpg" );
+    ui->abcright->setAlignment(Qt::AlignCenter);
+    ui->abcright->setPixmap(pic2);
 }
 
 void MainWindow::on_testabcButton_clicked()
@@ -102,6 +124,51 @@ void MainWindow::on_testabcButton_clicked()
     ui->studyButton->setChecked(false);
     ui->abcButton->setChecked(false);
     ui->stackedWidget->setCurrentIndex(4);
+
+    crrnt_std_score = 0;
+    testButtons.clear();
+    testButtons.push_back(ui->radioButton_1);
+    testButtons.push_back(ui->radioButton_2);
+    testButtons.push_back(ui->radioButton_3);
+    showChooseLetter();
+}
+
+void MainWindow::showChooseLetter()
+{
+    crrnt_test_answer = 3;
+    int crrnt_letter = (qrand() % 32)+1;
+
+    QString abc = "АБВГДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
+    QString answer = abc.at(crrnt_letter-1);
+    abc = abc.remove(crrnt_letter-1, 1);
+
+    QString path = ":/quest/resources/abc/al_"+QString::number(crrnt_letter)+".jpg";
+    QPixmap pic(path);
+    if(pic.isNull())
+       pic.load(":/quest/resources/default.jpg" );
+    ui->abcpic->setAlignment(Qt::AlignCenter);
+    ui->abcpic->setPixmap(pic);
+
+    int fake_letter = (qrand() % 31);
+    int crrnt_bttn = qrand() % 3;
+
+    testButtons[crrnt_bttn]->setText(abc.at(fake_letter));
+    abc = abc.remove(fake_letter, 1);
+    crrnt_test_answer -= crrnt_bttn;
+
+    int crrnt_bttn2;
+    do
+    {
+        crrnt_bttn2 = qrand() % 3;
+    }
+    while (crrnt_bttn2 == crrnt_bttn);
+
+    fake_letter = (qrand() % 30);
+    testButtons[crrnt_bttn2]->setText(abc.at(fake_letter));
+    abc = abc.remove(fake_letter, 1);
+    crrnt_test_answer -= crrnt_bttn2;
+
+    testButtons[crrnt_test_answer]->setText(answer);
 }
 
 void MainWindow::showLetter(int num)
@@ -313,4 +380,29 @@ void MainWindow::on_test1vegButton_clicked()
 void MainWindow::on_test2vegButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::on_yes_abcButton_clicked()
+{
+    if(crrnt_std_frst == crrnt_std_sknd)
+        crrnt_std_score++;
+    showTwoPics();
+}
+
+void MainWindow::on_no_abcButton_clicked()
+{
+    if(crrnt_std_frst != crrnt_std_sknd)
+        crrnt_std_score++;
+    showTwoPics();
+}
+
+void MainWindow::on_next_test_abcButton_clicked()
+{
+    if(testButtons[crrnt_test_answer]->isChecked())
+    {
+        crrnt_std_score++;
+    }
+    qDebug() << crrnt_std_score;
+    showChooseLetter();
+
 }

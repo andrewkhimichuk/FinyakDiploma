@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QAxObject>
+#include <QRadioButton>
 #include <QFile>
 
 struct User {
@@ -30,8 +31,9 @@ private slots:
     void createUserData();
     void on_abcButton_clicked();
     void on_studyButton_clicked();
+    void showTwoPics();
     void on_testabcButton_clicked();
-
+    void showChooseLetter();
     void on_nextabcButton_clicked();
 
     void on_outputButton_clicked();
@@ -68,6 +70,12 @@ private slots:
 
     void on_test2vegButton_clicked();
 
+    void on_yes_abcButton_clicked();
+
+    void on_no_abcButton_clicked();
+
+    void on_next_test_abcButton_clicked();
+
 private:
     void showLetter(int);
     void showAnimal(int);
@@ -77,6 +85,14 @@ private:
 
     int current_abc;
     int current_type;
+
+    int crrnt_std_frst;
+    int crrnt_std_sknd;
+    int crrnt_std_score;
+
+    int crrnt_test_answer;
+    QVector<QRadioButton*> testButtons;
+
     QMovie *mv;
     Ui::MainWindow *ui;
     User *crrntUser;
