@@ -89,6 +89,7 @@ private:
     int crrnt_std_frst;
     int crrnt_std_sknd;
     int crrnt_std_score;
+    int crrnt_abc_nmbrs;
 
     int crrnt_test_answer;
     QVector<QRadioButton*> testButtons;

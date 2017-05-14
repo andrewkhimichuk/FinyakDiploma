@@ -50,7 +50,8 @@ void MainWindow::saveDataToDB()
             QTextStream stream(&file);
             stream << crrntUser->name << ";" << crrntUser->surname << ";" <<
                       sex << ";" <<QString::number(crrntUser->age) << ";" <<
-                      defect << ";" << QDate::currentDate().toString() << "\n";
+                      defect << ";" << QDate::currentDate().toString() << ";" <<
+                      crrnt_abc_nmbrs << ";" << crrnt_std_score << "\n";
 
             qDebug() << stream.readAll();
             file.close();
@@ -61,7 +62,7 @@ void MainWindow::on_inputButton_clicked()
 {
     crrntUser = new User();
     createUserData();
-    saveDataToDB();
+   // saveDataToDB();
     qDebug() << ui->mainWidget->currentIndex();
     ui->mainWidget->setCurrentIndex(0);
 }
@@ -126,6 +127,7 @@ void MainWindow::on_testabcButton_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 
     crrnt_std_score = 0;
+    crrnt_abc_nmbrs = 0;
     testButtons.clear();
     testButtons.push_back(ui->radioButton_1);
     testButtons.push_back(ui->radioButton_2);
@@ -350,6 +352,7 @@ void MainWindow::on_exitstudyBttn_clicked()
 void MainWindow::on_exit_test_abcButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    saveDataToDB();
 }
 
 void MainWindow::on_test1fruitButton_clicked()
@@ -385,19 +388,24 @@ void MainWindow::on_test2vegButton_clicked()
 void MainWindow::on_yes_abcButton_clicked()
 {
     if(crrnt_std_frst == crrnt_std_sknd)
+    {
         crrnt_std_score++;
-    showTwoPics();
+        showTwoPics();
+    }
 }
 
 void MainWindow::on_no_abcButton_clicked()
 {
     if(crrnt_std_frst != crrnt_std_sknd)
+    {
         crrnt_std_score++;
-    showTwoPics();
+        showTwoPics();
+    }
 }
 
 void MainWindow::on_next_test_abcButton_clicked()
 {
+    crrnt_abc_nmbrs++;
     if(testButtons[crrnt_test_answer]->isChecked())
     {
         crrnt_std_score++;
